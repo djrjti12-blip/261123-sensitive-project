@@ -1,0 +1,501 @@
+:root {
+  /* ── 색상: 기본 ── */
+  --color-primary: #181d26;          /* 주 버튼 배경, 제목 글자 */
+  --color-primary-active: #0d1218;   /* 주 버튼 눌림 */
+  --color-ink: #181d26;              /* 가장 진한 글자 */
+  --color-body: #333840;             /* 본문 글자 */
+  --color-muted: #41454d;            /* 보조 글자 (글자 수, 캡션, 푸터) */
+  --color-hairline: #dddddd;         /* 1px 테두리 */
+  --color-border-strong: #9297a0;    /* 비활성 버튼 테두리 */
+
+  /* ── 색상: 면(배경) ── */
+  --color-canvas: #ffffff;           /* 페이지 기본 배경 */
+  --color-surface-soft: #f8fafc;     /* 입력 패널 배경 */
+  --color-surface-strong: #e0e2e6;   /* 비활성 주 버튼 배경 */
+  --color-surface-dark: #181d26;     /* 중립 결과 카드 */
+  --color-on-dark: #ffffff;          /* 어두운 면 위 글자 */
+
+  /* ── 색상: 시그니처 (결과 카드 + 작동 방식 섹션) ── */
+  --color-signature-forest: #0a2e0e; /* 긍정 결과 카드 */
+  --color-signature-coral: #aa2d00;  /* 부정 결과 카드 */
+  --color-signature-cream: #f5e9d4;  /* 작동 방식 섹션 배경 */
+
+  /* ── 색상: 의미 ── */
+  --color-link: #1b61c9;             /* 링크 글자 */
+  --color-info-border: #458fff;      /* 포커스 링, 입력창 포커스 테두리 */
+  --color-error: #aa2d00;            /* 오류 글자·테두리 (= coral 재사용) */
+  --color-error-surface: #fbf1ee;    /* 오류 알림 배경 */
+
+  /* ── 글꼴 ── */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
+  /* ── 모서리 ── */
+  --radius-sm: 6px;     /* 입력창, 오류 알림 */
+  --radius-md: 10px;    /* 작동 방식 카드 */
+  --radius-lg: 12px;    /* 버튼, 입력 패널, 결과 카드 */
+  --radius-full: 9999px;/* 진행 바 끝 처리에만 사용 */
+
+  /* ── 간격 (4px 단위) ── */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 96px;
+
+  /* ── 레이아웃 ── */
+  --container-max: 1280px;
+  --content-max: 760px;  /* 입력 패널·결과 카드 최대 폭 */
+  --nav-height: 64px;
+}
+
+/* ── 기본 리셋 및 글로벌 설정 ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+  background-color: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ── 타이포그래피 체계 ── */
+.t-display-lg {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.t-display-md {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.t-title-md {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.t-title-sm {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+
+.t-label-md {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+
+.t-button {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.t-body-lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.t-body-md {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.t-caption {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--color-muted);
+}
+
+/* ── 컨테이너 ── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-xxl);
+}
+
+/* ── 상단 바 ── */
+.top-nav {
+  height: var(--nav-height);
+  background-color: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.top-nav__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.top-nav__brand {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* ── 히어로 섹션 ── */
+.hero {
+  background-color: var(--color-canvas);
+  padding: var(--space-section) 0;
+}
+
+.hero h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.hero__sub {
+  color: var(--color-body);
+  margin-bottom: var(--space-xxl);
+}
+
+/* ── 입력 패널 ── */
+.input-panel {
+  max-width: var(--content-max);
+  background-color: var(--color-surface-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.text-input {
+  width: 100%;
+  min-height: 160px;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  resize: vertical;
+}
+
+.text-input::placeholder {
+  color: var(--color-muted);
+}
+
+.text-input:focus {
+  border-color: var(--color-info-border);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-info-border);
+}
+
+.text-input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.char-count {
+  text-align: right;
+  color: var(--color-muted);
+}
+
+.char-count--limit {
+  color: var(--color-error);
+}
+
+/* ── 오류 알림 ── */
+.alert-error {
+  background-color: var(--color-error-surface);
+  border-left: 4px solid var(--color-error);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.alert-error__title {
+  color: var(--color-error);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.alert-error__message {
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ── 버튼 ── */
+.button-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  min-height: 48px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-info-border);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+  border: none;
+  padding: 16px 24px;
+}
+
+.btn-primary:active {
+  background-color: var(--color-primary-active);
+}
+
+.btn-primary:disabled {
+  background-color: var(--color-surface-strong);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+  padding: 16px 24px;
+}
+
+.btn-secondary:active {
+  background-color: var(--color-surface-soft);
+}
+
+.btn-secondary:disabled {
+  border-color: var(--color-border-strong);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.btn-secondary-on-dark {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  border: none;
+  padding: 12px 20px;
+}
+
+.btn-secondary-on-dark:active {
+  background-color: var(--color-surface-soft);
+}
+
+/* ── 결과 카드 ── */
+.result-card {
+  max-width: var(--content-max);
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xxl);
+  color: var(--color-on-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.result-card:focus {
+  outline: none;
+}
+
+.result-card--positive {
+  background-color: var(--color-signature-forest);
+}
+
+.result-card--negative {
+  background-color: var(--color-signature-coral);
+}
+
+.result-card--neutral {
+  background-color: var(--color-surface-dark);
+}
+
+.result-card__eyebrow {
+  color: var(--color-on-dark);
+  opacity: 0.8;
+}
+
+.result-card__label {
+  color: var(--color-on-dark);
+}
+
+.result-card__confidence {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.result-card__confidence .t-label-md {
+  color: var(--color-on-dark);
+}
+
+.progress {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-on-dark);
+  border-radius: var(--radius-full);
+}
+
+.result-card__reason {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.result-card__reason .t-caption {
+  color: var(--color-on-dark);
+  opacity: 0.8;
+}
+
+.result-card__reason .t-body-lg {
+  color: var(--color-on-dark);
+}
+
+.result-card__footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.result-card__footer .t-caption {
+  color: var(--color-on-dark);
+  opacity: 0.8;
+}
+
+/* ── 작동 방식 섹션 ── */
+.how-it-works {
+  background-color: var(--color-signature-cream);
+  padding: var(--space-section) 0;
+}
+
+.step-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: var(--space-xl);
+}
+
+.step-card {
+  background-color: var(--color-canvas);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.step-card__num {
+  color: var(--color-muted);
+}
+
+/* ── 푸터 ── */
+.footer {
+  background-color: var(--color-canvas);
+  padding: var(--space-xxl) 0;
+  color: var(--color-muted);
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer__copy {
+  color: var(--color-muted);
+}
+
+/* ── 반응형 미디어 쿼리 ── */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .hero, .how-it-works {
+    padding: var(--space-xxl) 0;
+  }
+
+  .t-display-lg {
+    font-size: 32px;
+  }
+
+  .t-display-md {
+    font-size: 26px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row .btn {
+    width: 100%;
+  }
+
+  .result-card {
+    padding: var(--space-lg);
+  }
+
+  .result-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .result-card__footer .btn {
+    width: 100%;
+  }
+}

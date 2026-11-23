@@ -1,0 +1,17 @@
+{
+  "name": "sentiment-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAI 기반 감성 분석 웹 서비스",
+  "scripts": {
+    "dev": "node --env-file=.env dev-server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "openai": "^7.62.0"
+  }
+}
