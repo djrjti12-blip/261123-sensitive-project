@@ -1,17 +1,13 @@
 {
-  "name": "sentiment-analyzer",
+  "name": "bet-roulette",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "OpenAI 기반 감성 분석 웹 서비스",
+  "description": "AI가 항목을 나눠주는 내기 돌림판",
   "scripts": {
-    "dev": "node --env-file=.env dev-server.js",
-    "test": "node --test"
+    "dev": "node --env-file=.env scripts/dev-server.js"
   },
   "engines": {
-    "node": "24.x"
-  },
-  "dependencies": {
-    "openai": "^7.62.0"
+    "node": ">=20.6"
   }
 }

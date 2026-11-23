@@ -1,0 +1,147 @@
+/* 디자인 토큰 및 LevelUp 웹폰트 */
+
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-regular/levelup-regular/LevelUp-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-regular/levelup-regular/LevelUp-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-regular/levelup-regular/LevelUp-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-italic/levelup-italic/LevelUp-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-italic/levelup-italic/LevelUp-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LevelUp';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2610132210@levelup-italic/levelup-italic/LevelUp-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* 바탕·표면 */
+  --color-canvas: #000000;
+  --color-surface-1: #15181e;
+  --color-surface-2: #1f232b;
+  --color-surface-3: #3b3d45;
+  --color-hairline: rgba(178, 182, 189, 0.1);
+  --color-hairline-strong: #3b3d45;
+
+  /* 글자 */
+  --color-ink: #ffffff;
+  --color-ink-muted: #b2b6bd;
+  --color-ink-subtle: #656a76;
+
+  /* 반전 (주 버튼) */
+  --color-inverse-canvas: #ffffff;
+  --color-inverse-ink: #000000;
+
+  /* 포인트 */
+  --color-accent: #2b89ff;
+
+  /* 의미 색 */
+  --color-success: #00ca8e;
+  --color-warning: #ffcf25;
+  --color-error: #e62b1e;
+  --color-error-bg: rgba(230, 43, 30, 0.12);
+  --color-warning-bg: rgba(255, 207, 37, 0.12);
+
+  /* 타이포그래피 */
+  --type-display-size: 56px;
+  --type-display-weight: 700;
+  --type-display-lh: 1.18;
+  --type-display-ls: -1.6px;
+
+  --type-headline-size: 28px;
+  --type-headline-weight: 600;
+  --type-headline-lh: 1.21;
+  --type-headline-ls: -0.6px;
+
+  --type-card-title-size: 22px;
+  --type-card-title-weight: 600;
+  --type-card-title-lh: 1.18;
+  --type-card-title-ls: -0.4px;
+
+  --type-body-lg-size: 18px;
+  --type-body-lg-weight: 400;
+  --type-body-lg-lh: 1.69;
+  --type-body-lg-ls: 0;
+
+  --type-body-size: 16px;
+  --type-body-weight: 400;
+  --type-body-lh: 1.50;
+  --type-body-ls: 0;
+
+  --type-body-sm-size: 14px;
+  --type-body-sm-weight: 400;
+  --type-body-sm-lh: 1.71;
+  --type-body-sm-ls: 0;
+
+  --type-caption-size: 13px;
+  --type-caption-weight: 400;
+  --type-caption-lh: 1.38;
+  --type-caption-ls: 0.2px;
+
+  --type-button-size: 14px;
+  --type-button-weight: 600;
+  --type-button-lh: 1.29;
+  --type-button-ls: 0;
+
+  --type-eyebrow-size: 12px;
+  --type-eyebrow-weight: 600;
+  --type-eyebrow-lh: 1.23;
+  --type-eyebrow-ls: 0.6px;
+
+  /* 간격 */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 96px;
+
+  /* 모서리 */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 24px;
+  --radius-pill: 9999px;
+
+  --font-sans: 'LevelUp', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', sans-serif;
+  --container-max: 1200px;
+  --nav-height: 64px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --type-display-size: 36px;
+    --type-display-ls: -1px;
+    --type-headline-size: 24px;
+  }
+}
